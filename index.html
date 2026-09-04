@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nima OS</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- RGB Cursor Dark - https://www.cursors-4u.com/cursor/rgb-cursor-dark -->
+<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-dark-normal-6e1535b0-32.css">
+<!-- End www.Cursors-4U.com Code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+<script src="jquery-3.3.1.min.js"></script>
+<audio id="click-sound" src="soundeffects/mixkit-modern-technology-select-3124_[cut_0sec].mp3" preload="auto"></audio>
+</head>
+<body>
+
+<div class="loading">
+    <span class="loading-text"></span>
+</div>
+
+<nav>
+    <h1></h1>
+
+    <div class="datetime">
+        <span id="time">23:42</span>
+        <span id="date">16 Aug 2026</span>
+    </div>
+</nav>
+
+<div class="apps">
+
+    <div class="app" id="aboutbtn">
+        <i class="bi bi-person-vcard"></i>
+        <p>about</p>
+    </div>
+
+    <div class="app" id="contactbtn">
+        <i class="bi bi-envelope"></i>
+        <p>contact</p>
+    </div>
+
+    <div class="app" id="portfoliobtn">
+        <i class="bi bi-folder"></i>
+        <p>portfolio</p>
+    </div>
+
+    <div class="app" id="skillsbtn">
+        <i class="bi bi-code-slash"></i>
+        <p>skills</p>
+    </div>
+
+    <div class="app" id="music-btn">
+        <i class="bi bi-music-note-beamed"></i>
+        <p>music</p>
+    </div>
+
+    <!-- Settings -->
+    <div class="app" id="settingsbtn">
+        <i class="bi bi-gear"></i>
+        <p>settings</p>
+    </div>
+
+</div>
+
+
+<div class="settings">
+
+    <div class="settings-header">
+        <h2>SETTINGS</h2>
+
+        <button class="close-settings">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <button class="setting-option-background">
+        Background
+    </button>
+
+    <button class="setting-option-fonts">
+        Fonts
+    </button>
+
+</div>
+
+<div class="font-window">
+        <div class="settings-header">
+        <h2>FONTS</h2>
+
+        <button class="close-settings-fonts">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+    <div class="font-btns">
+
+    <button id="singlet">sniglet</button>
+    <button id="dynapuf">dynapuf</button>
+    <button id="michroma">michroma</button>
+    <button id="mirandsans">mirandasans</button>
+    <button id="monsieurl">monsieurl</button>
+    <button id="nabla">nabla</button>
+    <button id="snowburstone">snowburstone</button>
+
+    </div>
+
+</div>
+
+
+<div class="backgrounds">
+
+    <div class="settings-header">
+        <h2>BACKGROUNDS</h2>
+
+        <button class="close-settings-backgrounds">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="background-list">
+
+        <div class="background-option">
+            <img src="img/hello-world-pixel-7680x4320-15168.webp">
+            <button id="set-bg-hello">set</button>
+        </div>
+
+        <div class="background-option">
+            <img src="img/desktopbg.webp">
+            <button id="set-bg-samurai">set</button>
+        </div>
+
+        <div class="background-option">
+            <img src="img/dramatic-scenery-3840x2160-20802.webp">
+            <button id="set-bg-dramatic">set</button>
+        </div>
+
+        <div class="background-option">
+            <img src="img/bender-futurama-3840x2160-17539.webp">
+            <button id="set-bg-bender">set</button>
+        </div>
+
+        <div class="background-option">
+            <img src="img/pikachu-pixel-art-12800x7200-15216.webp">
+            <button id="set-bg-pikachu">set</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="about-me">
+
+        <div class="settings-header">
+        <h2>ABOUT ME</h2>
+
+        <button class="close-settings-about">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="name">
+        <i class="bi bi-person-circle"></i>
+        <h2>Nima Khaledi</h2>
+    </div>
+
+    <h3>Front-End Developer</h3>
+
+    <div class="about-me-bar">
+        <div class="bar-card">
+            <h4 class="number">50</h4>
+            <p>projects done</p>
+        </div>
+
+                <div class="bar-card">
+            <h4 class="number">90</h4>
+            <p>happy clients</p>
+        </div>
+
+                <div class="bar-card">
+            <h4 class="number">30</h4>
+            <p>website</p>
+        </div>
+
+                <div class="bar-card">
+            <h4 class="number">2</h4>
+            <p>years</p>
+        </div>
+    </div>
+<div class="about-text">
+    <h2>about</h2>
+    <p class="about-split">Hi, I'm Nima Khaledi, a passionate Web Designer and Developer.
+I enjoy turning creative ideas into modern, interactive, and user-friendly digital experiences. I work with HTML, CSS, JavaScript, jQuery, Bootstrap, and PHP, and I'm always exploring new technologies and ways to improve my skills.
+
+I care about clean design, smooth interactions, and building websites that don't just look good, but also feel great to use.
+
+Currently learning, creating, and building something new</p>
+</div>
+
+<div class="about-btn">
+    <button id="contactbtn">contact me</button>
+</div>
+
+</div>
+
+<div class="contact">
+    <div class="settings-header">
+        <h2>CONTACT ME</h2>
+
+        <button class="close-settings-contact">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="email">
+        <i class="bi bi-envelope"></i> <a href="mailto:rx1384@gmail.com">my gmail</a>
+    </div>
+
+    <div class="instagram">
+        <i class="bi bi-instagram"></i> <a href="https://instagram.com/rnimax">my instagram</a>
+    </div>
+
+    <div class="telegram">
+        <i class="bi bi-telegram"></i> <a href="https://t.me/RX24RX">my telegram</a>
+    </div>
+
+    <div class="github">
+        <i class="bi bi-github"></i> <a href="https://github.com/rx-lab">my github</a>
+    </div>
+</div>
+
+<div class="portfolio">
+
+    <div class="settings-header">
+        <h2>PORTFOLIO</h2>
+
+        <button class="close-settings-portfolio">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="portfolio-grid">
+
+        <div class="project-card" data-category="web">
+            <div class="project-thumb thumb-1">
+                <div class="project-overlay">
+                    <a href="https://veliora.ir/" target="_blank" class="project-link" title="Live preview"><i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+            <div class="project-info">
+                <h4>Veliora</h4>
+                <p>Portfolio Website</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>GSAP</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="ui">
+            <div class="project-thumb thumb-2">
+                <div class="project-overlay">
+                    <a href="https://photoraa.vercel.app" target="_blank" class="project-link" title="Live preview"><i class="bi bi-box-arrow-up-right"></i></a>
+                    <a href="https://github.com/rx-lab/PHOTORA" target="_blank" class="project-link" title="Source code"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+            <div class="project-info">
+                <h4>photora</h4>
+                <p>Photography Website</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="web">
+            <div class="project-thumb thumb-3">
+                <div class="project-overlay">
+                    <a href="https://filmbin.vercel.app" class="project-link" title="Live preview"><i class="bi bi-box-arrow-up-right"></i></a>
+                    <a href="https://github.com/rx-lab/filmbin" class="project-link" title="Source code"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+            <div class="project-info">
+                <h4>Nima OS</h4>
+                <p>Movie Website</p>
+                <div class="project-tags">
+                    <span>JS</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>jQuery</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="mobile">
+            <div class="project-thumb thumb-4">
+                <div class="project-overlay">
+                    <a href="https://news-rust-tau.vercel.app/" target="_blank" class="project-link" title="Live preview"><i class="bi bi-box-arrow-up-right"></i></a>
+                    <a href="https://github.com/rx-lab/news" target="_blank" class="project-link" title="Source code"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+            <div class="project-info">
+                <h4>News Website</h4>
+                <p>Modern news website</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>jQuery</span>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="skills">
+
+    <div class="settings-header">
+        <h2>SKILLS</h2>
+
+        <button class="close-settings-skills">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="skills-grid">
+
+<div class="skill-card">
+    <i class="devicon-html5-plain" style="color: #E34F26;"></i>
+    <h3>HTML</h3>
+</div>
+
+<div class="skill-card">
+    <i class="devicon-css3-plain" style="color: #1572B6;"></i>
+    <h3>CSS</h3>
+</div>
+
+<div class="skill-card">
+    <i class="devicon-javascript-plain" style="color: #F7DF1E;"></i>
+    <h3>JavaScript</h3>
+</div>
+
+<div class="skill-card">
+    <i class="devicon-jquery-plain" style="color: #0769AD;"></i>
+    <h3>jQuery</h3>
+</div>
+
+<div class="skill-card">
+    <i class="devicon-bootstrap-plain" style="color: #7952B3;"></i>
+    <h3>Bootstrap</h3>
+</div>
+
+<div class="skill-card">
+    <img src="img/gsap-dark.svg" alt="GSAP">
+    <h3>GSAP</h3>
+</div>
+
+<div class="skill-card">
+    <i class="devicon-photoshop-plain" style="color: #31A8FF;"></i>
+    <h3>Photoshop</h3>
+</div>
+
+    </div>
+
+</div>
+<div class="music">
+        <div class="settings-header">
+        <h2>MUSIC</h2>
+
+        <button class="close-settings-music">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+<div id="music-player">
+
+
+    <img id="song-image" src="img/desktopbg.webp">
+    <div id="song-name">song</div>
+    <div id="song-artist">artist</div>
+
+<div class="range">
+    <input id="slider-song" type="range">
+</div>
+
+
+    <div id="music-buttons">
+        <button id="forward-song"><i class="bi bi-skip-backward-fill" id="prev-song"></i></button>
+        <button id="play-song"><i class="bi bi-play-fill" id="playpause-song"></i></button>
+        <button id="backward-song"><i class="bi bi-skip-forward-fill" id="next-song"></i></button>
+    </div>
+</div>
+
+</div>
+
+    <div class="bottom">
+        <div class="bottom-icon" id="about">
+            <i class="bi bi-person-vcard"></i>
+            <p>about</p>
+        </div>
+
+        <div class="bottom-icon" id="contact">
+            <i class="bi bi-envelope"></i>
+            <p>contact</p>
+        </div>
+
+        <div class="bottom-icon" id="portfoliobtn-dock">
+            <i class="bi bi-folder"></i>
+            <p>portfolio</p>
+        </div>
+
+        <div class="bottom-icon">
+            <i class="bi bi-music-note-beamed" id="music-dock"></i>
+            <p>music</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

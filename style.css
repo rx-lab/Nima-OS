@@ -1,0 +1,1487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   FONT
+============================== */
+
+@font-face {
+    font-family: "sniglet";
+    src: url(fonts/Sniglet-Regular.ttf);
+}
+
+@font-face {
+    font-family: "michroma";
+    src: url(fonts/Michroma-Regular.ttf);
+}
+
+@font-face {
+    font-family: "mranda";
+    src: url(fonts/MirandaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "monsieurl";
+    src: url(fonts/MonsieurLaDoulaise-Regular.ttf);
+}
+
+@font-face {
+    font-family: "nabla";
+    src: url(fonts/Nabla-Regular-VariableFont_EDPT\,EHLT.ttf);
+}
+
+@font-face {
+    font-family: "snowburstone";
+    src: url(fonts/SnowburstOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: "dynapuf";
+    src: url(fonts/DynaPuff-VariableFont_wdth\,wght.ttf);
+}
+
+
+/* ==============================
+   ROOT
+============================== */
+
+:root {
+    --red: rgb(165, 26, 26);
+    --gray: rgb(73, 73, 73);
+
+    --glass: rgba(255, 255, 255, 0.075);
+    --glass-hover: rgba(255, 255, 255, 0.12);
+    --border: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==============================
+   HTML / BODY
+============================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    background-image: url("img/hello-world-pixel-7680x4320-15168.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "sniglet";
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+nav {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    margin: 30px auto;
+    padding: 18px 25px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+nav h1 {
+    font-size: 22px;
+}
+
+
+.datetime {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 16px;
+}
+
+
+/* ==============================
+   DESKTOP / APPS AREA
+============================== */
+
+.apps {
+    position: relative;
+
+    width: 100%;
+    height: calc(100vh - 150px);
+
+    /* Desktop باید زیر Navbar باشد */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+
+/* ==============================
+   APP ICON
+============================== */
+
+.app {
+    
+    position: absolute;
+    cursor: default;
+
+    width: 90px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+    user-select: none;
+
+    border: 1px solid transparent;
+
+    z-index: 1;
+}
+
+
+
+
+.app,
+.app:active {
+    cursor: inherit !important;
+}
+
+
+/* ==============================
+   APP ICON
+============================== */
+
+.app i {
+    font-size: 30px;
+    color: var(--gray);
+
+    pointer-events: none;
+}
+
+
+.app img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+.app p {
+    color: white;
+    text-align: center;
+
+    pointer-events: none;
+}
+
+
+/* ==============================
+   APP HOVER
+============================== */
+
+.app:hover {
+    background-color: var(--glass-hover);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid var(--border);
+}
+
+
+
+/* ==============================
+   INITIAL APP POSITIONS
+============================== */
+
+.app:nth-child(1) {
+    left: 30px;
+    top: 30px;
+}
+
+
+.app:nth-child(2) {
+    left: 30px;
+    top: 150px;
+}
+
+
+.app:nth-child(3) {
+    left: 30px;
+    top: 270px;
+}
+
+
+.app:nth-child(4) {
+    left: 30px;
+    top: 390px;
+}
+
+
+.app:nth-child(5) {
+    left: 30px;
+    top: 510px;
+}
+
+.app:nth-child(6) {
+    left: 30px;
+    top: 630px;
+}
+
+
+/* ==============================
+   BOTTOM DOCK
+============================== */
+
+.bottom {
+    position: fixed;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 15px 20px;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    z-index: 1;
+}
+
+/* ==============================
+   DOCK ICON
+============================== */
+
+.bottom-icon {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    color: var(--gray);
+
+
+    border-radius: 12px;
+
+    transition: 0.25s ease;
+}
+.bottom,
+.bottom-icon,
+.bottom-icon:hover,
+.bottom-icon:active {
+    cursor: inherit !important;
+}
+
+
+.bottom-icon i {
+    font-size: 22px;
+    color: var(--gray);
+
+    transition: 0.25s ease;
+}
+
+
+/* ==============================
+   DOCK HOVER
+============================== */
+
+.bottom-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-5px);
+}
+
+
+.bottom-icon:hover i {
+    color: white;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+
+/* ==============================
+   DOCK TOOLTIP
+============================== */
+
+.bottom-icon p {
+    position: absolute;
+
+    top: -50px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(5px);
+
+    opacity: 0;
+
+    white-space: nowrap;
+
+    padding: 6px 10px;
+
+    font-size: 14px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 7px;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+}
+
+
+.bottom-icon:hover p {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+.settings {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+
+    margin-left: -250px;
+    margin-top: -250px;
+
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 5;
+
+
+}
+
+.settings,
+.settings:active,
+.about-me,
+.contact,
+.backgrounds,
+.skills,
+.music,
+.font-window{
+    cursor: inherit !important;
+}
+
+
+/* Header */
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2{
+    font-size: 30px;
+}
+
+
+/* Close button */
+
+.close-settings,
+.close-settings-backgrounds,
+.close-settings-about,
+.close-settings-contact,
+.close-settings-portfolio,
+.close-settings-skills,
+.close-settings-music,
+.close-settings-fonts {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+h2{
+    color: white;
+}
+
+.close-settings:hover,
+.close-settings-backgrounds:hover,
+.close-settings-about:hover,
+.close-settings-contact:hover,
+.close-settings-portfolio:hover,
+.close-settings-skills:hover,
+.close-settings-music:hover,
+.close-settings-fonts:hover {
+    background: rgb(218, 22, 22);
+}
+
+
+/* Setting option */
+
+.setting-option-background,
+.setting-option-fonts {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+    font-family:"sniglet";
+
+    cursor: pointer;
+
+    font-family: "sniglet";
+    font-size: 16px;
+
+    text-align: left;
+
+    transition: 0.2s ease;
+}
+
+
+
+.backgrounds {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 500px;
+    margin-left: -400px;
+    margin-top: -400px;
+
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 5;
+
+    overflow: hidden;
+
+height: fit-content;
+}
+.background-list {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 15px;
+
+    overflow-y: auto;
+    padding: 5px;
+}
+
+
+.background-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(29, 29, 29, 0.8);
+
+    padding: 10px;
+    border-radius: 12px;
+
+    min-height: 180px;
+}
+
+.backgrounds img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.backgrounds button {
+    width: 100%;
+    padding: 8px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    font-family: "sniglet";
+    cursor: pointer;
+}
+
+
+.about-me {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: fit-content;
+
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+.name{
+display: flex;
+flex-direction: row;
+gap: 10px;
+margin-top: 20px;
+}
+
+.name i{
+font-size: 30px;
+color: white;
+}
+
+.about-me h3{
+    color: white;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.about-me-bar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: var(--glass);
+    padding: 20px;
+    color: white;
+    margin-top: 40px;
+}
+
+.bar-card{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+}
+
+.about-text{
+    margin-top: 20px;
+    color: white;
+}
+
+.about-text h2{
+    margin-bottom: 15px;
+}
+
+.about-text p{
+    line-height: 30px;
+}
+
+.about-btn button{
+    padding: 10px 15px;
+    font-family: "sniglet";
+    font-size: 16px;
+    color: black !important;
+    background-color: white;
+    border: 1px solid var(--gray);
+    margin-top: 20px;border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.contact{
+        position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: fit-content;
+
+    padding: 20px;
+display: none;
+    flex-direction: column;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 5;
+
+    overflow: hidden;
+    color: white;
+    gap: 20px;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.email,.github,.instagram,.telegram{
+    background-color: var(--glass);
+    padding: 20px;
+    transition: 0.5s ease;
+        font-size: 20px;
+}
+
+.email a,.github a,.instagram a,.telegram a{
+    text-decoration: none;
+    color: white;
+}
+
+.instagram:hover{
+background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+);
+
+border-radius: 10px;
+}
+
+.github a{
+    text-decoration: none;
+    color: white;
+}
+
+.email:hover{
+    background: linear-gradient(
+        45deg,
+        #4285f4,
+        #34a853,
+        #fbbc05,
+        #ea4335
+    );
+border-radius: 10px;
+}
+
+.telegram:hover{
+    background: linear-gradient(
+        45deg,
+        #0088cc,
+        #229ed9,
+        #54c8ff
+    );
+    border-radius: 10px;
+}
+
+.github:hover{
+    background: linear-gradient(to right, rgb(0, 0, 129), rgb(0, 2, 37));
+    border-radius: 10px;
+}
+/* ==============================
+   PORTFOLIO PANEL
+============================== */
+
+.portfolio {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 640px;
+    max-width: 90vw;
+    max-height: 80vh;
+
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 5;
+
+    cursor: inherit !important;
+
+    overflow: hidden;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 20px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+
+    padding: 5px 5px 5px 0;
+}
+
+.portfolio-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.project-card:hover {
+    background: var(--glass-hover);
+}
+
+.project-thumb {
+    position: relative;
+
+    width: 100%;
+    height: 170px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.thumb-1 { 
+    background: url(img/project1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.thumb-2 { 
+    background: url(img/project2.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.thumb-3 { 
+    background: url(img/project3.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.thumb-4 { 
+    background: url(img/project1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 0;
+
+    transition: 0.25s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+.project-link:hover {
+    background: white;
+    color: rgb(70, 70, 70);
+}
+
+.project-info {
+    padding: 12px 14px 14px;
+}
+
+.project-info h4 {
+    color: white;
+    font-size: 15px;
+}
+
+.project-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-top: 10px;
+}
+
+.project-tags span {
+    padding: 3px 8px;
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 10px;
+}
+
+.skills {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    max-width: 90vw;
+
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+    border: 2px solid rgb(255, 255, 255);
+
+    background:rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    z-index: 20;
+
+    overflow: hidden;
+}
+.skill-card img {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    color: white;
+}
+
+.skills .settings-header {
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   SKILLS GRID
+============================== */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+/* ==============================
+   SKILL CARD
+============================== */
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 120px;
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    color: white;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.skill-card i {
+    font-size: 42px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.skill-card h3 {
+    font-family: "sniglet";
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   HOVER
+============================== */
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.skill-card:hover i {
+    transform: scale(1.12);
+
+    color: white;
+}
+
+.music {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+}
+
+#song-image{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+#music-player{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#song-name{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#slider-song{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 5px;
+    border-radius: 5px;
+    background: var(--glass);
+
+}
+
+#slider-song::-webkit-slider-thumb{
+        -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+
+}
+
+.range{
+    margin-top: 20px;
+}
+
+#music-buttons{
+    display: flex;
+    margin-top: 10px;
+    font-size: 30px;
+    gap: 50px;
+}
+
+#forward-song{
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#play-song{
+        font-size: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#play-song:active,
+#backward-song:active,
+#forward-song:active{
+    transform: scale(0.5);
+}
+
+#backward-song{
+        font-size: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.loading {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+
+    color: white;
+
+    font-size: 30px;
+
+    z-index: 9999;
+}
+
+.loading-text {
+    font-family: "sniglet";
+}
+
+.font-window {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: fit-content;
+
+    padding: 20px;
+
+    display: none;
+    flex-direction: column;
+
+    border: 2px solid white;
+
+    background: rgba(128, 128, 128, 0.158);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 20;
+}
+
+.font-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.font-btns button{
+        background-color: var(--glass);
+    padding: 20px;
+    transition: 0.5s ease;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 30px;
+}
+
+#singlet{
+    font-family: "sniglet";
+}
+
+#dynapuf{
+    font-family: "dynapuf";
+}
+
+#michroma{
+    font-family: "michroma";
+}
+
+#mirandsans{
+    font-family: "mranda";
+}
+
+#monsieurl{
+    font-family: "monsieurl";
+}
+
+#nabla{
+    font-family: "nabla";
+}
+
+#snowburstone{
+    font-family: "snowburstone";
+}
+
+body[data-font="sniglet"] * {
+    font-family: "sniglet" !important;
+}
+
+body[data-font="dynapuf"] * {
+    font-family: "dynapuf" !important;
+}
+
+body[data-font="michroma"] * {
+    font-family: "michroma" !important;
+}
+
+body[data-font="mranda"] * {
+    font-family: "mranda" !important;
+}
+
+body[data-font="monsieurl"] * {
+    font-family: "monsieurl" !important;
+}
+
+body[data-font="nabla"] * {
+    font-family: "nabla" !important;
+}
+
+body[data-font="snowburstone"] * {
+    font-family: "snowburstone" !important;
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+
+    body{
+        background-size:cover;
+    }
+
+    nav {
+        width: 92%;
+        padding: 14px 18px;
+        margin: 15px auto;
+    }
+
+    nav h1 {
+        font-size: 18px;
+    }
+
+    .datetime {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    /* آیکون‌ها گرید ۳ در ۳ */
+    .apps {
+        position: relative;
+        height: auto;
+        margin-top: 15px;
+        padding: 0 15px 100px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 12px;
+    }
+
+    .app {
+        position: static !important;
+        transform: none !important;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .app i {
+        font-size: 24px;
+    }
+
+    .app p {
+        font-size: 13px;
+    }
+
+    /* همه پنجره‌ها تمام صفحه بشن */
+    .settings,
+    .backgrounds,
+    .about-me,
+    .contact,
+    .portfolio,
+    .skills,
+    .music,
+    .font-window {
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 0;
+
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+
+        border-radius: 0;
+        border: none;
+
+        overflow-y: auto;
+        z-index: 3;
+    }
+
+    .about-me{
+        overflow-y: hidden;
+    }
+
+    .contact{
+        z-index: 5;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .background-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #song-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    #slider-song {
+        width: 220px;
+    }
+
+    /* داک پایین */
+    .bottom {
+        gap: 25px;
+        padding: 10px 14px;
+        bottom: 10px;
+        max-width: 92vw;
+    }
+
+    .bottom-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .bottom-icon i {
+        font-size: 18px;
+    }
+
+    .bottom-icon p {
+        font-size: 12px;
+        top: -40px;
+    }
+}
